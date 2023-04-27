@@ -79,4 +79,12 @@ else
     echo "  --> ${1}/${2}..;/"
     curl -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2;/
     echo "  --> ${1}/${2};/"
+    curl -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/$2.json
+    echo "  --> ${1}/${2}.json"
+    curl -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/.%3B/$2
+    echo "  --> ${1}/.%3B/${2}"
+    curl -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/%3B/$2
+    echo "  --> ${1}/%3B/${2}"
+    curl -s -o /dev/null -iL -w "%{http_code}","%{size_download}" $1/./$2/..
+    echo "  --> ${1}/./${2}/.."
 fi
